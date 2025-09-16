@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>All Issues</title>
+    <link rel="stylesheet" href="./CSS/issues.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      /* FAQ STYLING */
+      .faq {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 20px;
+        background: #f9fff9;
+        border-radius: 12px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        font-family: 'Segoe UI', sans-serif;
+      }
+
+      .faq h2 {
+        text-align: center;
+        font-size: 26px;
+        margin-bottom: 30px;
+        color: #1b5e20;
+      }
+
+      .faq-container {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+      }
+
+      .faq-column {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .faq h3 {
+        margin-top: 18px;
+        font-size: 18px;
+        color: #2e7d32;
+        position: relative;
+        padding-left: 20px;
+      }
+
+      .faq h3::before {
+        content: "➤";
+        position: absolute;
+        left: 0;
+        color: #43a047;
+        font-size: 14px;
+      }
+
+      .faq p {
+        margin: 6px 0 15px 20px;
+        font-size: 15px;
+        line-height: 1.6;
+        color: #444;
+      }
+
+      /* ---------------- Issue Status Tracker ---------------- */
+      .status-tracker {
+        display: flex;
+        justify-content: space-between;
+        position: relative;
+        margin: 40px auto;
+        max-width: 700px;
+      }
+
+      .status-tracker::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: #d0e6d0;
+        z-index: 1;
+      }
+
+      .step {
+        position: relative;
+        text-align: center;
+        width: 25%;
+        z-index: 2;
+      }
+
+      .circle {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: #28a745;
+        margin: 0 auto;
+        line-height: 32px;
+        font-size: 14px;
+        color: white;
+      }
+
+      .step p {
+        margin-top: 8px;
+        font-size: 14px;
+      }
+
+      /* ---------------- Top Reported Issues ---------------- */
+      .trends {
+        margin: 30px auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 20px;
+        max-width: 1000px;
+      }
+
+      .trend-card {
+        background: #fff;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        transition: 0.3s;
+        border: 3px solid transparent;
+        animation: borderPulse 3s infinite;
+      }
+
+      @keyframes borderPulse {
+        0% { border-color: #28a745; }
+        50% { border-color: #43a047; }
+        100% { border-color: #28a745; }
+      }
+
+      .trend-card h3 {
+        color: #28a745;
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .trend-card p {
+        font-size: 16px;
+        font-weight: bold;
+      }
+
+      .btn {
+        display: block;
+        margin: 20px auto;
+        background: #28a745;
+        color: white;
+        padding: 10px 18px;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: 0.3s;
+      }
+      .btn:hover {
+        background: #1e7a34;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+                    <img class="img"  src="./Asset/logo-img.png" alt="Jharkhand Logo" />
+
+          <div class="logo-name">
+            <h1>GOVERNMENT OF JHARKHAND</h1>
+            <h3 style="padding: 0 0 0 8px">Civic Issue Reporting Website</h3>
+          </div>
+        </div>  
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="report.html">Report Issue</a></li>
+          <li><a href="issues.html">All Issues</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="admin.html">Admin</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Dashboard -->
+    <section id="dashboard">
+      <h1>📊 Dashboard</h1>
+    </section>
+
+    <!-- Civic Issue Chart -->
+    <section class="chart-section">
+      <div class="chart-container">
+        <canvas id="civicChart"></canvas>
+      </div>
+    </section>
+
+    <section class="issues-grid" id="issuesList">
+      <!-- Issues will load via JS -->
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section id="faq" class="faq">
+      <h2>❓ FAQ – Civic Issue Reporting</h2>
+      <div class="faq-container">
+        <!-- Left Column -->
+        <div class="faq-column">
+          <h3>Q1. What is this platform?</h3>
+          <p>A smart app/portal for citizens to report civic issues like garbage, potholes, waterlogging, etc.</p>
+          <h3>Q2. Who can use it?</h3>
+          <p>Every resident of Jharkhand.</p>
+          <h3>Q3. How do I report an issue?</h3>
+          <p>Click → Upload photo → Add location → Submit.</p>
+          <h3>Q4. Can I track my complaint?</h3>
+          <p>Yes! Get real-time updates: Pending → In Progress → Resolved.</p>
+          <h3>Q5. Why is it eco-friendly?</h3>
+          <p>Because it promotes Clean & Green living, reduces pollution, and encourages community participation.</p>
+        </div>
+        <!-- Right Column -->
+        <div class="faq-column">
+          <h3>Q6. Is my identity safe?</h3>
+          <p>Yes. You can even report anonymously.</p>
+          <h3>Q7. What issues can I report?</h3>
+          <p>Garbage, potholes, drainage, streetlights, pollution, or illegal dumping.</p>
+          <h3>Q8. What if no action is taken?</h3>
+          <p>The system escalates unresolved cases to higher authorities.</p>
+          <h3>Q9. Any rewards for reporting?</h3>
+          <p>Yes! Active users may earn recognition, eco-badges, or community rewards.</p>
+          <h3>Q10. Why should I use it?</h3>
+          <p>Because together we can make Jharkhand cleaner, greener, and smarter 🌱✨</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ✅ Issue Status Tracker -->
+    <h2 class="status-text">Issue Status Tracker</h2>
+    <div class="status-tracker">
+      <div class="step" class="step1">
+        <div class="circle">1</div>
+        <p>Reported</p>
+      </div>
+      <div class="step">
+        <div class="circle">2</div>
+        <p>Verified</p>
+      </div>
+      <div class="step">
+        <div class="circle">3</div>
+        <p>In Progress</p>
+      </div>
+      <div class="step">
+        <div class="circle">4</div>
+        <p>Resolved</p>
+      </div>
+    </div>
+
+    <!-- ✅ Top Reported Issues / Trends -->
+    <h2 class="status-text">Top Reported Issues (This Month)</h2>
+    <div class="trends" id="trendContainer">
+      <div class="trend-card">
+        <h3>🔥 Garbage Issues</h3>
+        <p>60% of total reports</p>
+      </div>
+      <div class="trend-card">
+        <h3>🕳 Potholes</h3>
+        <p>20% of total reports</p>
+      </div>
+      <div class="trend-card">
+        <h3>💡 Streetlights</h3>
+        <p>10% of total reports</p>
+      </div>
+      <div class="trend-card">
+        <h3>💧 Waterlogging</h3>
+        <p>10% of total reports</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>CivicConnect</h3>
+          <p>Empowering citizens to raise and resolve civic issues.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Report an Issue</a></li>
+            <li><a href="#">Track Complaint</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Services Section</h3>
+          <ul>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Emergency Contacts</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Jharkhand</li>
+            <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+            <li><i class="fas fa-envelope"></i> info@civicissues.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Government of Jharkhand | All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="./JS/issue.js"></script>
+  </body>
+</html>

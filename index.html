@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home | Civic Issue Reporting</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./CSS/style.css" />
+
+    <style>
+      /* ✅ Slider Styles */
+      .slider {
+        width: 100%;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding: 20px 0;
+        background: #f5fff7;
+      }
+
+      .slider .row {
+        display: flex;
+        gap: 15px;
+      }
+
+      .slider .coloum {
+        flex: 0 0 auto;
+        width: 250px;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        background: #fff;
+        transition: transform 0.3s ease;
+      }
+
+      .slider .coloum img {
+        width: 100%;
+        height: 180px;
+        object-fit: cover;
+        display: block;
+      }
+
+      .slider .coloum:hover {
+        transform: scale(1.05);
+      }
+
+      /* ✅ Scrollbar hidden for cleaner look */
+      .slider::-webkit-scrollbar {
+        display: none;
+      }
+
+      .slider {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- ✅ Common Navbar -->
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img class="img" src="./Asset/logo-img.png" alt="Jharkhand Logo" />
+          <div class="logo-name">
+            <h1>GOVERNMENT OF JHARKHAND</h1>
+            <h3>Civic Issue Reporting Website</h3>
+          </div>
+        </div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="report.html">Report Issue</a></li>
+          <li><a href="issues.html">All Issues</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="admin.html">Admin</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Clean & Green Jharkhand</h1>
+        <p>Report civic issues and help make your city better.</p>
+        <a href="report.html" class="btn">Report an Issue</a>
+      </div>
+    </section>
+
+    <!-- Wonders of Jharkhand Section -->
+    <div class="container">
+      <header>
+        <h1 class="main-title">🌿 Wonders of Jharkhand 🌿</h1>
+        <p class="subtitle">Land of Forests, Waterfalls & Heritage</p>
+      </header>
+
+      <section class="map-about">
+        <div class="map-section">
+          <img
+            src="https://i.pinimg.com/564x/4b/35/d9/4b35d9bccfef05f7716c65be968691f6.jpg"
+            alt="Jharkhand Map"
+          />
+          <h3>Jharkhand Map</h3>
+        </div>
+
+        <div class="about">
+          <section class="intro">
+            <p>
+              Jharkhand ("The land of forest") is a State in eastern India,
+              created on 15 November 2000, from what was previously the southern
+              half of Bihar. The State shares its border with Bihar, Uttar
+              Pradesh, Chhattisgarh, Odisha and West Bengal. It has an area of
+              79,714 km² (30,778 sq mi), making it the 15th largest State by
+              area, and the 14th largest by population. Hindi is the official
+              language. Ranchi is its capital and Dumka is the sub capital.
+              Jharkhand is known for waterfalls, hills and holy places like
+              Baidyanath Dham, Parasnath and Rajrappa.
+            </p>
+          </section>
+          <h2>About Jharkhand State</h2>
+          <p>Area : 79,714 km²</p>
+          <p>Capital City : Ranchi</p>
+          <p>Districts : 24</p>
+          <p>Population : 3.3 Crores</p>
+        </div>
+      </section>
+
+      <section class="gallery">
+        <div class="photo-card">
+          <img
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJDocmgCMMq5TITM8eIoI6SePrn_BEDE2kAw&s"
+            alt="Governor"
+          />
+          <h3>Shri Santosh Kumar Gangwar</h3>
+          <p>Governor</p>
+        </div>
+
+        <div class="photo-card">
+          <img
+            src="https://th-i.thgim.com/public/incoming/45usps/article68763881.ece/alternates/FREE_1200/PTI10_08_2024_000328B.jpg"
+            alt="Chief Minister"
+          />
+          <h3>Shri Hemant Soren</h3>
+          <p>Chief Minister</p>
+        </div>
+
+        <div class="photo-card">
+          <img
+            src="https://i0.wp.com/avenuemail.in/wp-content/uploads/2025/01/Alka-Tiwari.jpg?fit=1200%2C800&ssl=1"
+            alt="Chief Secretary"
+          />
+          <h3>Smt Alka Tiwari</h3>
+          <p>Chief Secretary</p>
+        </div>
+      </section>
+    </div>
+    <!-- ✅ Civic Issues Image Slider -->
+    <div class="slider">
+      <div class="row">
+        <div class="coloum">
+          <img src="./Asset/slider-img1.jpeg" alt="Air Pollution" />
+        </div>
+        <div class="coloum">
+          <img src="./Asset/slider-img2.jpeg" alt="Dustbin" />
+        </div>
+        <div class="coloum">
+          <img src="./Asset/slider-img3.jpg" alt="Garbage" />
+        </div>
+        <div class="coloum">
+          <img src="./Asset/slider-img4.webp" alt="Road Dumps" />
+        </div>
+        <div class="coloum">
+          <img src="./Asset/slider-img5.jpg" alt="Sewage" />
+        </div>
+        <div class="coloum">
+          <img src="./Asset/slider-img6.webp" alt="Street Light" />
+        </div>
+        <div class="coloum">
+          <img src="./Asset/slider-img7.webp" alt="Dustbin" />
+        </div>
+        <div class="coloum">
+          <img src="./Asset/slider-img8.jpg" alt="Dustbin" />
+        </div>
+        <div class="coloum">
+          <img src="./Asset/slider-img9.jpg" alt="Dustbin" />
+        </div>
+        <div class="coloum">
+          <img src="./Asset/slider-img10.png" alt="Dustbin" />
+        </div>
+      </div>
+    </div>
+    <div class="slider-slogan">
+      <h2>
+        🌱 “Clean Jharkhand, Green Jharkhand – Your Step, Our Support.”<span
+        ></span> 🌍 “Your Voice, Our Action – Towards a Clean & Green
+        Jharkhand.”
+      </h2>
+    </div>
+
+    <!-- Clean & Green Jharkhand Cards Section -->
+    <section class="page-container">
+      <h1>Clean & Green Jharkhand</h1>
+      <div class="cards-container">
+        <div class="card">
+          <div class="card-image">
+            <img src="./Asset/card-img-1.avif" alt="Smart Waste Management" />
+          </div>
+          <div class="card-content">
+            <h2>Smart Waste Management</h2>
+            <p>
+              Promoting renewable energy solutions to build a sustainable
+              future. Harnessing solar, wind, and bio-energy for cleaner and
+              greener communities.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image">
+            <img src="./Asset/card-img-2.jpg" alt="Green Energy Initiatives" />
+          </div>
+          <div class="card-content">
+            <h2>Green Energy Initiatives</h2>
+            <p>
+              Promoting the adoption of solar and wind energy technologies. Our
+              platform helps citizens report areas suitable for renewable energy
+              projects and tracks progress on state-level initiatives.
+            </p>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-image">
+            <img src="./Asset/card-img-3.jpg" alt="Water Conservation" />
+          </div>
+          <div class="card-content">
+            <h2>Water Conservation</h2>
+            <p>
+              Encouraging rainwater harvesting, watershed management, and
+              efficient irrigation practices. Citizens can use the app to locate
+              recharge zones and contribute to preserving water resources.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section (Moved above footer) -->
+    <section class="stats">
+      <div class="stat-box">
+        <h2>120+</h2>
+        <p>Issues Reported</p>
+      </div>
+      <div class="stat-box">
+        <h2>80+</h2>
+        <p>Issues Resolved</p>
+      </div>
+      <div class="stat-box">
+        <h2>50+</h2>
+        <p>Active Volunteers</p>
+      </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>CivicConnect</h3>
+          <p>Empowering citizens to raise and resolve civic issues.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Report an Issue</a></li>
+            <li><a href="#">Track Complaint</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Services Section</h3>
+          <ul>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Emergency Contacts</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Jharkhand</li>
+            <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+            <li><i class="fas fa-envelope"></i> info@civicissues.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Government of Jharkhand | All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="./JS/main.js"></script>
+  </body>
+</html>

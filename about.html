@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About | Civic Issue Reporting</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./CSS/about.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <img class="img" src="./Asset/logo-img.png" alt="Jharkhand Logo" />
+
+          <div class="logo-name">
+            <h1>GOVERNMENT OF JHARKHAND</h1>
+            <h3 style="padding: 0 0 0 8px">Civic Issue Reporting Website</h3>
+          </div>
+        </div>
+        <ul class="nav-links" id="navLinks">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="report.html">Report Issue</a></li>
+          <li><a href="issues.html">all Issues</a></li>
+          <li><a href="about.html" class="active">About</a></li>
+          <li><a href="admin.html">Admin</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- About Section -->
+    <section class="about-section">
+      <h1>About This Project</h1>
+      <p>
+        This platform is part of the Smart India Hackathon 2025 initiative under
+        the Government of Jharkhand. Our aim is to empower citizens to report
+        civic issues like garbage dumping, potholes, waterlogging, and more, so
+        authorities can resolve them quickly.
+      </p>
+      <p>
+        Theme: <strong>Clean & Green Technology 🌱</strong>
+        Together, we can make Jharkhand a cleaner, greener, and smarter state.
+      </p>
+
+      <!-- Contact Form -->
+      <div class="contact-form">
+        <h2>📩 Contact Us</h2>
+        <form id="contactForm">
+          <label>Name:</label>
+          <input type="text" id="name" required />
+
+          <label>Email:</label>
+          <input type="email" id="email" required />
+
+          <label>Message:</label>
+          <textarea id="message" rows="5" required></textarea>
+
+          <button type="submit">Send Message</button>
+        </form>
+        <p id="successMsg" class="success-msg">
+          ✅ Thank you! Your message has been sent.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact & Support Section -->
+    <section id="contact-support">
+      <h2>📞 Contact & Support</h2>
+      <p>
+        If you face any issues, reach us through the following support channels:
+      </p>
+
+      <div class="support-grid">
+        <!-- Helpline -->
+        <div class="support-card">
+          <h3>📱 Helpline Numbers</h3>
+          <p><strong>1800-123-456</strong> (Toll Free)</p>
+          <p><strong>+91-9876543210</strong> (Emergency)</p>
+        </div>
+
+        <!-- WhatsApp -->
+        <div class="support-card">
+          <h3>💬 WhatsApp Support</h3>
+          <p>Chat with us on WhatsApp for quick help.</p>
+          <a href="https://wa.me/919876543210" target="_blank" class="btn"
+            >Start Chat</a
+          >
+        </div>
+
+        <!-- Email -->
+        <div class="support-card">
+          <h3>📧 Email Support</h3>
+          <p>Write to us and we’ll respond within 24 hours.</p>
+          <a href="mailto:support@civicissues.in" class="btn">Send Email</a>
+        </div>
+
+        <!-- Chatbot -->
+        <div class="support-card">
+          <h3>🤖 Chatbot Assistance</h3>
+          <p>Get instant answers from our AI Chatbot.</p>
+          <button class="btn" onclick="openChat()">Start Chatbot</button>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>CivicConnect</h3>
+          <p>Empowering citizens to raise and resolve civic issues.</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest"></i></a>
+          </div>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Report an Issue</a></li>
+            <li><a href="#">Track Complaint</a></li>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Services Section</h3>
+          <ul>
+            <li><a href="#">FAQs</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms & Conditions</a></li>
+            <li><a href="#">How It Works</a></li>
+            <li><a href="#">Emergency Contacts</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><i class="fas fa-map-marker-alt"></i> Jharkhand</li>
+            <li><i class="fas fa-phone"></i> (123) 456-7890</li>
+            <li><i class="fas fa-envelope"></i> info@civicissues.com</li>
+          </ul>
+        </div>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2025 Government of Jharkhand | All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="./JS/about.js"></script>
+    <!-- external JS -->
+  </body>
+</html>

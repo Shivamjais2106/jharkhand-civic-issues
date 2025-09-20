@@ -11,6 +11,10 @@ HTML,body {
     background: #f5fff7;
     color: #333;
     flex-direction: column;
+      line-height:1.5;
+      background:linear-gradient(180deg,#f7fbfb 0%, #ffffff 100%);
+      color:#072023;
+
 }
 h1,
 h2,
@@ -120,79 +124,87 @@ h6 {
     to { opacity: 1; transform: translateY(0); }
   }
 }
-
-.about-section {
-  padding: 60px 20px;
-  max-width: 900px;
-  margin: auto;
-  text-align: center;
-  animation: fadeIn 1s ease-in-out;
+.container {
+  /* padding: 60px; */
+  max-width: 1200px;  /* ya jitna aap chaho */
+  margin: 0 auto;     /* center */
+  padding: 0 20px;    /* dono side equal spacing */
 }
-.about-section h1 {
-  font-size: 36px;
-  color: #2e7d32;
-  margin: 20px;
-}
-.about-section p {
-  font-size: 18px;
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.contact-form {
-  margin-top: 40px;
-  background: #f4f9f4;
-  padding: 30px;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-  animation: slideUp 1s ease;
-}
-.contact-form label {
-  display: block;
-  margin-top: 15px;
-  font-weight: bold;
-  color: #2e7d32;
-}
-.contact-form input,
-.contact-form textarea {
-  width: 100%;
-  padding: 12px;
-  margin-top: 8px;
-  border: 1px solid #ccc;
-  border-radius: 10px;
-  outline: none;
-  transition: 0.3s;
-}
-.contact-form input:focus,
-.contact-form textarea:focus {
-  border-color: #43a047;
-  box-shadow: 0 0 5px #a5d6a7;
-}
-.contact-form button {
-  margin-top: 20px;
-  background: #2e7d32;
-  color: white;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-.contact-form button:hover {
-  background: #1b5e20;
-}
-.success-msg {
-  color: green;
-  display: none;
-  margin-top: 10px;
-}
- body {
-      font-family: Arial, sans-serif;
-      background: #f4fff7;
-      margin: 0;
-      padding: 0;
+    :root{
+      --bg:#ffffff;
+      --muted:#6b7280;
+      --accent:#00796b;
+      --accent-2: #2e7d32;
+      --card:#f8fafb;
+      --radius:14px;
     }
-
+    .container{max-width:var(--container);margin:0 auto;padding:20px}
+    .site-header{position:sticky;top:0;z-index:50;backdrop-filter: blur(6px)}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 0;}
+    .brand{display:flex;gap:12px;align-items:center}
+    .brand .logo{font-size:30px;background:var(--card);padding:10px;border-radius:10px}
+    .brand h1{margin:0;font-size:18px}
+    .brand .tag{margin:0;color:var(--muted);font-size:13px}
+    .top-nav{display:flex;align-items:center;gap:12px}
+    .top-nav a{color:var(--muted);text-decoration:none;font-weight:600;padding:8px;border-radius:8px}
+    .top-nav a:hover{background:#f0f6f5;color:#035047}
+    .btn-primary{background:var(--accent);color:white;padding:8px 14px;border-radius:10px;border:0;font-weight:600;cursor:pointer}
+    .btn-ghost{background:transparent;color:var(--accent-2);border:1px solid rgba(0,0,0,0.06);padding:8px 12px;border-radius:10px;text-decoration:none}
+    .hero{padding:36px 0}
+    .hero-grid{display:grid;grid-template-columns:1fr 380px;gap:28px;align-items:center}
+    .hero-text h2{font-size:28px;margin:0 0 10px}
+    .lead{color:var(--muted);margin:0 0 18px}
+    .hero-points{list-style:none;padding:0;margin:0 0 18px}
+    .hero-points li{display:flex;align-items:center;gap:8px;color:var(--muted);margin-bottom:8px}
+    .hero-card{position:relative;border-radius:var(--radius);overflow:hidden;box-shadow:0 8px 30px rgba(6,22,21,0.06);background:linear-gradient(180deg,#fff 0%, #f7fdf9 100%);padding:22px}
+    .map-decor{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+    .card-content{position:relative;padding:8px 8px 0}
+    .stats{display:flex;gap:12px;margin-top:12px}
+    .stats div{background:rgba(255,255,255,0.8);padding:8px;border-radius:10px;min-width:80px;text-align:center;box-shadow:inset 0 -1px 0 rgba(0,0,0,0.02)}
+    .stats strong{display:block;font-size:18px}
+    .section{padding:28px 0}
+    .section-sub{color:var(--muted);margin-top:6px}
+    .features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:18px}
+    .feature{background:var(--card);padding:16px;border-radius:12px;box-shadow:0 6px 18px rgba(8,30,30,0.04);display:flex;gap:12px}
+    .feature .icon{font-size:28px}
+    .feature h4{margin:0 0 6px}
+    .alt-bg{background:#f3fbf9}
+    .steps{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px}
+    .step{flex:1 1 180px;background:white;padding:14px;border-radius:12px;box-shadow:0 6px 22px rgba(6,22,21,0.03)}
+    .step-num{background:var(--accent);width:36px;height:36px;border-radius:10px;color:white;display:flex;align-items:center;justify-content:center;font-weight:700;margin-bottom:8px}
+    .impact-grid{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px}
+    .impact-card{flex:1 1 260px;background:linear-gradient(180deg,#fff 0%, #f6fdfa 100%);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(6,22,21,0.04)}
+    .cta-row{display:flex;align-items:center;justify-content:space-between;margin-top:18px;padding:16px;background:var(--card);border-radius:12px}
+    .cta-row p{margin:0;font-weight:600}
+    .site-footer{margin-top:28px;padding:24px 0;border-top:1px solid rgba(6,22,21,0.04)}
+    .footer-inner{display:flex;justify-content:space-between;gap:10px;align-items:center}
+    .modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(3,6,6,0.35);z-index:1200;padding:24px}
+    .modal[aria-hidden="false"]{display:flex}
+    .modal-card{background:white;padding:18px;border-radius:12px;min-width:320px;max-width:560px;position:relative;box-shadow:0 20px 60px rgba(6,22,21,0.25)}
+    .modal-close{position:absolute;right:12px;top:10px;border:0;background:transparent;font-size:18px;cursor:pointer}
+    .modal-card h3{margin-top:4px}
+    .modal-card label{display:block;margin-top:10px;font-size:14px;color:var(--muted)}
+    .modal-card input, .modal-card textarea{width:100%;padding:8px;margin-top:6px;border-radius:8px;border:1px solid #e6eef0}
+    .form-actions{display:flex;gap:8px;justify-content:flex-end;margin-top:12px}
+    .form-msg{margin-top:10px;color:var(--accent-2);font-weight:600}
+    @media (max-width:980px){
+      .hero-grid{grid-template-columns:1fr}
+      .top-nav{display:none}
+      .features-grid{grid-template-columns:1fr}
+      .stats{flex-direction:column;gap:8px}
+    }
+    .hero-text{
+      margin: 60px;
+    }
+    .hero-card{
+      margin: 20px;
+    }
+    .container{
+      padding: 0 60px 0 60px;
+    }
+    #how{
+      padding: 0 60px 0 60px  ;
+    }
     /* ---------------- Contact & Support Section ---------------- */
     #contact-support {
       margin: 60px auto;
@@ -259,7 +271,6 @@ h6 {
     .btn:hover {
       background: #1b5e20;
     }
-/* Footer Styles */
 /* Footer */
 footer {
     background: #000000;

@@ -32,42 +32,166 @@
         </ul>
       </nav>
     </header>
+    <!-- Hero / About -->
+    <section id="about" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h2>Our Initiative — Civic Issue Reporting System</h2>
+          <p class="lead">
+            This platform is a direct bridge between citizens and the Government
+            of Jharkhand — file complaints, track progress, and build
+            transparency.
+          </p>
+          <ul class="hero-points">
+            <li>
+              <span class="material-icons">location_on</span> Report with photo
+              , video & location
+            </li>
+            <li>
+              <span class="material-icons">timelapse</span> Directly reaches the
+              right department
+            </li>
+            <li>
+              <span class="material-icons">visibility</span> Track status and
+              get updates
+            </li>
+          </ul>
+          <div class="hero-ctas">
+            <button id="ctaReport" class="btn-primary">Report an Issue</button>
+            <a href="#how" class="btn-ghost">How it works</a>
+          </div>
+        </div>
 
-    <!-- About Section -->
-    <section class="about-section">
-      <h1>About This Project</h1>
-      <p>
-        This platform is part of the Smart India Hackathon 2025 initiative under
-        the Government of Jharkhand. Our aim is to empower citizens to report
-        civic issues like garbage dumping, potholes, waterlogging, and more, so
-        authorities can resolve them quickly.
-      </p>
-      <p>
-        Theme: <strong>Clean & Green Technology 🌱</strong>
-        Together, we can make Jharkhand a cleaner, greener, and smarter state.
-      </p>
-
-      <!-- Contact Form -->
-      <div class="contact-form">
-        <h2>📩 Contact Us</h2>
-        <form id="contactForm">
-          <label>Name:</label>
-          <input type="text" id="name" required />
-
-          <label>Email:</label>
-          <input type="email" id="email" required />
-
-          <label>Message:</label>
-          <textarea id="message" rows="5" required></textarea>
-
-          <button type="submit">Send Message</button>
-        </form>
-        <p id="successMsg" class="success-msg">
-          ✅ Thank you! Your message has been sent.
-        </p>
+        <div class="hero-card">
+          <svg
+            class="map-decor"
+            viewBox="0 0 600 400"
+            preserveAspectRatio="xMidYMid slice"
+            aria-hidden="true"
+          >
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0" stop-color="#e6f5ea" />
+                <stop offset="1" stop-color="#f6fbff" />
+              </linearGradient>
+            </defs>
+            <rect width="600" height="400" fill="url(#g)" />
+            <g opacity="0.12" fill="#00796b">
+              <path
+                d="M60 120c30-40 90-40 140-20s100 10 140 0 90-50 120-40 30 80 0 100-120 30-160 20-120-10-160 10S50 180 60 120z"
+              />
+            </g>
+          </svg>
+          <div class="card-content">
+            <h3>Citizen-first. Transparent. Fast.</h3>
+            <p>
+              Our goal is to ensure every voice is heard and every issue
+              addressed efficiently.
+            </p>
+            <div class="stats">
+              <div>
+                <strong id="statReports">12,486</strong
+                ><span>Reports filed</span>
+              </div>
+              <div>
+                <strong id="statResolved">9,102</strong><span>Resolved</span>
+              </div>
+              <div>
+                <strong id="statDepts">18</strong><span>Departments</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- Features -->
+    <section id="features" class="container section">
+      <div class="container">
+        <h2>Main Features</h2>
+        <p class="section-sub">
+          Easy to use tools, direct routing, and transparent tracking.
+        </p>
+        <div class="features-grid">
+          <div class="feature">
+            <div class="icon">📍</div>
+            <h4>Location-aware Reporting</h4>
+            <p>Add photo , video and exact location for faster response.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">🔔</div>
+            <h4>Real-time Notifications</h4>
+            <p>
+              Stay updated when your complaint is acknowledged and resolved.
+            </p>
+          </div>
+          <div class="feature">
+            <div class="icon">📊</div>
+            <h4>Transparent Tracking</h4>
+            <p>Track status and view departmental actions.</p>
+          </div>
+          <div class="feature">
+            <div class="icon">🤝</div>
+            <h4>Department Routing</h4>
+            <p>Automatically forwards to the right department.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works -->
+    <section id="how" class="section alt-bg">
+      <div class="container">
+        <h2>How It Works</h2>
+        <div class="steps">
+          <div class="step">
+            <div class="step-num">1</div>
+            <h4>Report</h4>
+            <p>Citizen submits details with photo , video & location.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">2</div>
+            <h4>Route</h4>
+            <p>System forwards complaint to the right department.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">3</div>
+            <h4>Action</h4>
+            <p>Field teams take necessary action and update status.</p>
+          </div>
+          <div class="step">
+            <div class="step-num">4</div>
+            <h4>Close</h4>
+            <p>Citizen is notified when the issue is resolved.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact -->
+    <section id="impact" class="container section">
+      <div class="container">
+        <h2>Impact / Benefits</h2>
+        <div class="impact-grid">
+          <div class="impact-card">
+            <h3>Accountability</h3>
+            <p>Departments are held accountable with public tracking.</p>
+          </div>
+          <div class="impact-card">
+            <h3>Faster Resolution</h3>
+            <p>Direct routing reduces response time.</p>
+          </div>
+          <div class="impact-card">
+            <h3>Community Trust</h3>
+            <p>Enhances trust between citizens and government.</p>
+          </div>
+        </div>
+        <div class="cta-row">
+          <p>Together, let’s build a better Jharkhand.</p>
+          <button id="finalReport" class="btn-primary">Report an Issue</button>
+        </div>
+      </div>
+    </section>
     <!-- Contact & Support Section -->
     <section id="contact-support">
       <h2>📞 Contact & Support</h2>
@@ -106,7 +230,7 @@
           <button class="btn" onclick="openChat()">Start Chatbot</button>
         </div>
       </div>
-    </section>
+    </section>*
     <!-- Footer -->
     <footer>
       <div class="footer-content">
